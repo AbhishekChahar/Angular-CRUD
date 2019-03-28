@@ -1,0 +1,1 @@
+It should conatin the structure of the app , to make our code more understandable.
