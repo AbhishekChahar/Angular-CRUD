@@ -13,18 +13,13 @@ export class CustomerComponent implements OnInit {
 
   submitted: boolean;
   formControls = this.customerService.form.controls;
+
   ngOnInit() {
   }
 
    onSubmit(){
      this.submitted = true;
-     if(this.customerService.form.valid){
-
-
-     //if(this.customerService.form.get('$key').value==null)
-      //insert
-     //else
-      //update
+     if ( this.customerService.form.valid ) {
       this.submitted = false;
    }
   }
