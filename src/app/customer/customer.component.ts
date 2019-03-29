@@ -18,13 +18,14 @@ export class CustomerComponent implements OnInit {
   ngOnInit() {
   }
 
-   onSubmit(){
+   onSubmit() {
      this.submitted = true;
      if ( this.customerService.form.valid ) {
         if (this.customerService.form.get( '$key' ).value == null) {
           this.customerService.insertCustomer(this.customerService.form.value);
-          else
+        } else {
           this.customerService.updateCustomer(this.customerService.form.value);
+          }
         this.showSuccessMessage = true;
         setTimeout(() => this.showSuccessMessage = false, 3000);
         }
@@ -32,5 +33,4 @@ export class CustomerComponent implements OnInit {
      this.customerService.form.reset();
    }
   }
-}
 
