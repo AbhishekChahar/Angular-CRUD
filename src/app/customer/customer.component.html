@@ -5,7 +5,7 @@
 
     <div class ="form-group">
       <label>Full name</label>
-      <input formControlName="fullname" class= "form-control" [ngClass]="{'is-invalid': submitted && formControls.fullName.errors}">
+      <input formControlName="fullName" class= "form-control" [ngClass]="{'is-invalid': submitted && formControls.fullName.errors}">
     <div class="invalid-feedback" *ngIf= " submitted && formControls.fullName.errors ">
       This Field is required.
     </div>
@@ -41,6 +41,7 @@
     </div>
 
   </form>
+  </div>
   <div class="alert alert-info" *ngIf="showSuccessMessage">
     Submitted successfully.
   </div>
@@ -48,4 +49,4 @@
       <app-customer-list></app-customer-list>
     </div>
   </div>
-  </div>
+
