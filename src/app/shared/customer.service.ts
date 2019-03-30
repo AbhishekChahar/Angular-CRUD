@@ -1,5 +1,5 @@
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
@@ -9,7 +9,7 @@ export class CustomerService {
 
   constructor( public firebase: AngularFireDatabase) { }
    customerList: AngularFireList<any>;
-form = new FormGroup( {
+  form = new FormGroup( {
     $key: new FormControl(null),
     fullName: new FormControl('' , Validators.required),
     email: new FormControl('', Validators.email),
@@ -18,11 +18,11 @@ form = new FormGroup( {
 
   });
 
-  getCustomer(customer){
+  getCustomers(customer) {
    this.customerList = this.firebase.list('customers');
    return this.customerList.snapshotChanges();
   }
-  insertCustomer(customer){
+  insertCustomer(customer: { fullName: any; email: any; mobile: any; location: any; }) {
    this.customerList.push({
      fullName: customer.fullName,
       email: customer.email,

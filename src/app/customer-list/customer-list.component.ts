@@ -14,12 +14,12 @@ export class CustomerListComponent implements OnInit {
   showDeleteMessage: boolean;
   searchText = '';
   ngOnInit() {
-    this.customerService.getCustomer().subscribe(
+    this.customerService.getCustomers( this.customerService ).subscribe(
       list => {
         this.customerArray = list.map( item => {
           return{
           $key: item.key,
-          ...item.payload.vol()
+          ...item.payload.val()
         };
       });
   });
