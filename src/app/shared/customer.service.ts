@@ -11,10 +11,10 @@ export class CustomerService {
    customerList: AngularFireList<any>;
 form = new FormGroup( {
     $key: new FormControl(null),
-    fullname: new FormControl('' , Validators.required),
+    fullName: new FormControl('' , Validators.required),
     email: new FormControl('', Validators.email),
-      mobile: new FormControl('', [ Validators.required, Validators.minLength(8)]),
-      location: new FormControl(''),
+    mobile: new FormControl('', [ Validators.required, Validators.minLength(8)]),
+    location: new FormControl('')
 
   });
 
