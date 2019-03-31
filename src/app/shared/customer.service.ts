@@ -9,7 +9,7 @@ export class CustomerService {
 
   constructor( public firebase: AngularFireDatabase) { }
    customerList: AngularFireList<any>;
-  form = new FormGroup( {
+  form: FormGroup = new FormGroup( {
     $key: new FormControl(null),
     fullName: new FormControl('' , Validators.required),
     email: new FormControl('', Validators.email),
