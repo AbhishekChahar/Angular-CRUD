@@ -30,7 +30,7 @@ export class CustomerComponent implements OnInit {
         setTimeout(() => this.showSuccessMessage = false, 3000);
         }
      this.submitted = false;
-     this.customerService.form.reset();
+     this.customerService.form.reset();                       //this is resetting the input forms for fresh record
    }
   }
 

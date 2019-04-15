@@ -11,6 +11,10 @@ import { CustomerService } from './shared/customer.service';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
 
+//for firebase connection
+                            //for firebase connection
+                   //for firebase connection
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,9 +24,9 @@ import { environment } from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule,
+    ReactiveFormsModule,                                                        //For creating Forms
+    AngularFireModule.initializeApp(environment.firebaseConfig),                // for firebase connection
+    AngularFireDatabaseModule,                                                  //for firebase connection
     FormsModule
   ],
   providers: [ CustomerService ],
