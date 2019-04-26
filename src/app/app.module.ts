@@ -11,9 +11,7 @@ import { CustomerService } from './shared/customer.service';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
 
-//for firebase connection
-                            //for firebase connection
-                   //for firebase connection
+
 
 @NgModule({
   declarations: [

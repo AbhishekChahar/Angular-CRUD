@@ -7,12 +7,14 @@
   <thead>
     <th>Full Name</th>
     <th>email</th>
+    <th>Credits</th>
     <th>Mobile</th>
   </thead>
   <ng-container *ngFor="let customer of customerArray">
     <tr class="table-dark" *ngIf= "filterCondition(customer)">
       <td>{{ customer.fullName}}</td>
       <td>{{ customer.email}}</td>
+      <td>{{ customer.credits }}</td>
       <td>{{ customer.mobile}}</td>
       <td>
         <button class="btn btn-outline-info" (click)="customerService.populateForm(customer) ">Edit</button>

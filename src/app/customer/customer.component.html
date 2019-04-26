@@ -5,7 +5,7 @@
 
     <div class ="form-group">
       <label>Full name</label>
-      <input formControlName="fullName" class= "form-control" [ngClass]="{'is-invalid': submitted && formControls.fullName.errors}">
+      <input formControlName="fullName" class= "form-control" [ngClass]="{'is-invalid': submitted && formControls.fullName.errors}"><!--ngclass is a directive-->
     <div class="invalid-feedback" >
       This Field is required.
     </div>
@@ -33,6 +33,14 @@
         <input formControlName="location" class= "form-control">
         <div class="invalid-feedback"  >
           This Field is required.
+        </div>
+      </div>
+
+      <div class ="form-group">
+        <label>Credit</label>
+        <input formControlName="credits" class= "form-control" >
+        <div class="invalid-feedback"         >
+          <label >This Field is required.</label>
         </div>
       </div>
 
