@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { CustomerService } from '../shared/customer.service';
 
 @Component({
@@ -25,7 +24,7 @@ export  class CustomerListComponent implements OnInit {
   });
 }
   onDelete($key) {
-    if(confirm('are you sure you want to delete this record?')){
+    if (confirm('are you sure you want to delete this record?')){
       this.customerService.deleteCustomer($key);
       this.showDeleteMessage = true;
       setTimeout(() => this.showDeleteMessage = false, 3000);

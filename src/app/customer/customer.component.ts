@@ -8,6 +8,7 @@ import { CustomerService } from '../shared/customer.service';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
+  searchText: string;
 
   constructor(public  customerService: CustomerService) { }
 
@@ -33,5 +34,10 @@ export class CustomerComponent implements OnInit {
      this.customerService.form.reset();                       //this is resetting the input forms for fresh record reset is a
                                                               //method of form class of reactive forms module
    }
+
+   filterCondition(customer){
+    return customer.fullName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
+  }
+
   }
 
