@@ -1,3 +1,22 @@
-<p>
-  transfer-credit works!
-</p>
+<div class= "col-md-12">
+  <h1>Transfer Credits From</h1>
+  <div>
+      <form class =" form-inline">
+          <input class="form-control" name="fromInput" placeholder="from" #searchInput="ngModel" [(ngModel)]="searchname" style="width: 80%;">
+          <button class="btn btn-outline-primary"  (click)="searchname = ''">X</button>
+        </form>
+
+  <h1>To</h1>
+
+      <form class =" form-inline">
+          <input class="form-control" name="toInput" placeholder="to" #searchInput="ngModel" [(ngModel)]="searchname" style="width: 80%;">
+          <button class="btn btn-outline-primary"  (click)="searchname = ''">X</button>
+        </form>
+
+        <h1>Amount</h1>
+
+      <form class =" form-inline">
+          <input class="form-control" name="searchInput" placeholder="Enter Amount" #searchInput="ngModel" [(ngModel)]="giveamount" style="width: 80%;">
+          <button class="btn btn-outline-primary"  (click)="giveamount = ''">X</button>
+        </form>
+  </div>

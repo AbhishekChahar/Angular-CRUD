@@ -1,29 +1,7 @@
-<div class= "col-md-12">
-  <h1>Transfer Credits From</h1>
-  <div>
-      <form class =" form-inline">
-          <input class="form-control" name="fromInput" placeholder="from" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-          <button class="btn btn-outline-primary"  (click)="searchText = ''">X</button>
-        </form>
-
-  <h1>To</h1>
-
-      <form class =" form-inline">
-          <input class="form-control" name="toInput" placeholder="to" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-          <button class="btn btn-outline-primary"  (click)="searchText = ''">X</button>
-        </form>
-
-        <h1>Amount</h1>
-
-      <form class =" form-inline">
-          <input class="form-control" name="searchInput" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-          <button class="btn btn-outline-primary"  (click)="searchText = ''">X</button>
-        </form>
-  </div>
-
+<app-transfer-credit></app-transfer-credit>
 <form class =" form-inline">
   <input class="form-control" name="searchInput" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
-  <button class="btn btn-outline-primary"  (click)="searchText = ''">X</button>
+  <button class="btn btn-primary"  (click)="searchText = ''">X</button>
 </form>
 
 <table class="table table-sm">
