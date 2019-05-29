@@ -19,17 +19,19 @@ export class CustomerComponent implements OnInit {
   formControls = this.customerService.form.controls;
 
   ngOnInit() {
-      const source = of('Hello');
-      const example = source.pipe(mergeMap(val => of(`${val} World!`)));
-      const subscribe = example.subscribe(val => console.log(val));
 
-      const myobservable= of(1,2,3);
+      const source = of('This is');
+      const example = source.pipe(mergeMap(val => of(`${val} it!!!!`)));
+      const subscribed = example.subscribe(val => console.log(val));
+
+      const myobservable = of(1, 2 , 3 );
       const myObserver = {
         next: x => console.log('observer got a next value'+x),
         error: err => console.error('observer got an error'+ err),
         complete: () => console.log('Observer gota complete notificatipon')
       };
       myobservable.subscribe(myObserver);
+
 
       function sequenceSubscriber(observer){
         observer.next(1);
@@ -38,10 +40,10 @@ export class CustomerComponent implements OnInit {
         observer.complete();
         return {unsubscribe(){}};
       }
-      const sequence= new Observable(sequenceSubscriber);
+      const sequence = new Observable(sequenceSubscriber);
       sequence.subscribe({
         next(num){ console.log(num);},
-        complete() {console.log('Finished Sequence');}
+        complete() {console.log('Finished Sequence'); }
       });
 
 
