@@ -10,16 +10,12 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerService } from './shared/customer.service';
 import { NgModule } from '@angular/core';
 import { environment } from '../environments/environment';
-import { TransferCreditComponent } from './transfer-credit/transfer-credit.component';
-
-
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
     CustomerListComponent,
-    TransferCreditComponent
   ],
   imports: [
     BrowserModule,

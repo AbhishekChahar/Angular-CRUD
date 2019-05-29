@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 import { CustomerService } from '../shared/customer.service';
+import { mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-customer',
@@ -17,6 +19,32 @@ export class CustomerComponent implements OnInit {
   formControls = this.customerService.form.controls;
 
   ngOnInit() {
+      const source = of('Hello');
+      const example = source.pipe(mergeMap(val => of(`${val} World!`)));
+      const subscribe = example.subscribe(val => console.log(val));
+
+      const myobservable= of(1,2,3);
+      const myObserver = {
+        next: x => console.log('observer got a next value'+x),
+        error: err => console.error('observer got an error'+ err),
+        complete: () => console.log('Observer gota complete notificatipon')
+      };
+      myobservable.subscribe(myObserver);
+
+      function sequenceSubscriber(observer){
+        observer.next(1);
+        observer.next(2);
+        observer.next(3);
+        observer.complete();
+        return {unsubscribe(){}};
+      }
+      const sequence= new Observable(sequenceSubscriber);
+      sequence.subscribe({
+        next(num){ console.log(num);},
+        complete() {console.log('Finished Sequence');}
+      });
+
+
   }
 
    onSubmit() {
